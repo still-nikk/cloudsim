@@ -20,11 +20,11 @@ jobs:
           java-version: '8'
           distribution: 'temurin'
 
-      - name: Compile SmartTrafficLambdaSimulation.java with JAR dependencies
+      - name: Compile AWS_Lambda_Simulation.java with JAR dependencies
         run: |
           mkdir -p out
-          javac -cp "lib/*" -d out src/cloudsim/simulations/SmartTrafficLambdaSimulation.java
+          javac -cp "lib/*" -d out src/cloudsim/simulations/AWS_Lambda_Simulation.java
 
-      - name: Run SmartTrafficLambdaSimulation
+      - name: Run AWS_Lambda_Simulation
         run: |
-          java -cp "out:lib/*" cloudsim.simulations.SmartTrafficLambdaSimulation
+          java -cp "out:lib/*" cloudsim.simulations.AWS_Lambda_Simulation
