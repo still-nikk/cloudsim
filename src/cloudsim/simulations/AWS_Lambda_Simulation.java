@@ -229,17 +229,17 @@ public class AWS_Lambda_Simulation {
         List<CloudletExecutionInfo> executionSchedule = new ArrayList<>();
 
         // Initial cloudlets (6 cloudlets at time 0)
-        for (int i = 0; i <= 6; i++) {
+        for (int i = 0; i <= 5; i++) {
             Cloudlet cloudlet = createCloudlet(i, brokerId);
             executionSchedule.add(new CloudletExecutionInfo(cloudlet, 0, i));
         }
 
         // Add reuse scenarios - Reuse function 2 after 3 seconds
-        Cloudlet cloudlet2Again = createCloudlet(5, brokerId);
+        Cloudlet cloudlet2Again = createCloudlet(11, brokerId);
         executionSchedule.add(new CloudletExecutionInfo(cloudlet2Again, 3.0, 2));
 
         // Reuse function 4 after 6 seconds
-        Cloudlet cloudlet4Again = createCloudlet(6, brokerId);
+        Cloudlet cloudlet4Again = createCloudlet(12, brokerId);
         executionSchedule.add(new CloudletExecutionInfo(cloudlet4Again, 6.0, 4));
 
         return executionSchedule;
